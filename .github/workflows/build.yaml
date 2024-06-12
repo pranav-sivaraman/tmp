@@ -4,7 +4,9 @@ jobs:
   build-compilers:
     runs-on: ubuntu-22.04
     name: Build Compilers
+
     permissions:
+      contents: read
       packages: write
 
     steps:
