@@ -59,7 +59,7 @@ jobs:
             --oci-username $GITHUB_ACTOR --oci-password $GITHUB_TOKEN local-buildcache
 
             # Concretize
-            spack -e . v concretize
+            spack -e . concretize
 
             # Spack Install 
             spack -e . install --no-check-signature
