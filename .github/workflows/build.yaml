@@ -52,10 +52,11 @@ jobs:
             export SPACK_PYTHON=/opt/python/cp312-cp312/bin/python
 
             # Find compilers
-            spack -e compiler find --mixed-toolchain
+            spack -e . compiler find --mixed-toolchain
 
             # Login
-            spack -e . mirror set --oci-username $GITHUB_ACTOR --oci-password $GITHUB_TOKEN local-buildcache
+            spack -e . mirror set \
+            --oci-username $GITHUB_ACTOR --oci-password $GITHUB_TOKEN local-buildcache
 
             # Concretize
             spack -e . v concretize
