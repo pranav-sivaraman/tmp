@@ -40,6 +40,13 @@ jobs:
           ref: develop
           path: spack
 
+      - name: Setup cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.ccache
+          key: build_manylinux2014_${{ matrix.arch }}
+
       - name: Run Build
         uses: uraimo/run-on-arch-action@v2
         with:
@@ -47,6 +54,12 @@ jobs:
           base_image: ${{ matrix.base_image }}
 
           githubToken: $ {{ github.token }}
+
+          setup: |
+            mkdir -p ~/.ccache
+
+          dockerRunArgs: |
+            --volume "${HOME}/.ccache:/root/.ccache
 
           env: |
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
