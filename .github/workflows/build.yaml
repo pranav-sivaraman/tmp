@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        include:
+        container:
           - base_image: [quay.io/pypa/manylinux2014_x86_64, quay.io/pypa/manylinux2014_ppc64le]
             arch: [x86_64, ppc64le]
 
