@@ -84,6 +84,9 @@ jobs:
             spack -e . mirror set \
             --oci-username $GITHUB_ACTOR --oci-password $GITHUB_TOKEN local-buildcache
 
+            # External Find
+            spack -e . external find
+
             # Concretize
             spack -e . concretize --fresh
 
