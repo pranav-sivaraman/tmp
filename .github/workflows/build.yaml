@@ -52,6 +52,7 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           base_image: ${{ matrix.base_image }}
+          distro: ubuntu-22.04
 
           githubToken: $ {{ github.token }}
 
