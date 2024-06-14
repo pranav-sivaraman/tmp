@@ -10,8 +10,8 @@ jobs:
         run: egrep -c '(vmx|svm)' /proc/cpuinfo
       - name: Install KVM?
         run: |
-          apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
-          kvm-ok
+          sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
+          sudo kvm-ok
           
       - name: Enable KVM group perms
         run: |
