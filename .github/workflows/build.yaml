@@ -63,7 +63,7 @@ jobs:
             mkdir -p ~/.ccache
 
           dockerRunArgs: |
-            --platform linux/${{ matrix.platform }}
+            --platform ${{ matrix.platform }}
             --volume "${HOME}/.ccache:/root/.ccache"
 
           env: |
