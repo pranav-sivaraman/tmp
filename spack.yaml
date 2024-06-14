@@ -10,7 +10,6 @@ spack:
     install_tree:
       root: /opt/spack
       padded_length: 128
-    ccache: true
   mirrors:
     local-buildcache:
       url: oci://ghcr.io/pranav-sivaraman/tmp
