@@ -60,7 +60,7 @@ jobs:
 
           install: |
             yum update -y
-            yum install ccache
+            yum install ccache -y
 
           dockerRunArgs: |
             --volume "${HOME}/.ccache:/root/.ccache"
