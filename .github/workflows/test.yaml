@@ -6,5 +6,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      - name: Enable KVM group perms
+        run: |
+            echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+            sudo udevadm control --reload-rules
+            sudo udevadm trigger --name-match=kvm
+            docker run -idt --device /dev/kvm --name trial quay.io/pypa/manylinux2014_ppc64le
+            docker cp /usr/sbin/kvm-ok trial:/opt
+            docker exec -it trial /opt/kvm-ok
