@@ -58,6 +58,10 @@ jobs:
           setup: |
             mkdir -p ~/.ccache
 
+          install: |
+            yum update -y
+            yum install ccache
+
           dockerRunArgs: |
             --volume "${HOME}/.ccache:/root/.ccache"
 
