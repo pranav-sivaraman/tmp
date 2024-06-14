@@ -14,8 +14,8 @@ jobs:
         include:
           - base_image: quay.io/pypa/manylinux2014_x86_64
             arch: x86_64
-          - base_image: quay.io/pypa/manylinux2014_ppc64le
-            arch: ppc64le
+          # - base_image: quay.io/pypa/manylinux2014_ppc64le # QEMU is SLOW
+          #   arch: ppc64le
 
     steps:
 
