@@ -4,7 +4,7 @@ spack:
   - hwloc +rocm amdgpu_target=gfx90a
   view: false
   concretizer:
-    unify: false
+    unify: when_possible
     targets:
       granularity: generic
   config:
