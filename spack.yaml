@@ -4,7 +4,7 @@ spack:
   - llvm@=14.0.6 ^hwloc +rocm amdgpu_target=gfx90a
   view: false
   concretizer:
-    unify: true
+    unify: false
     targets:
       granularity: generic
   config:
