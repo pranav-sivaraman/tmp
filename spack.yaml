@@ -1,7 +1,6 @@
 spack:
   specs:
-  - mold
-  - llvm@=14.0.6 ^hwloc +rocm amdgpu_target=gfx90a
+  - hwloc +rocm amdgpu_target=gfx90a
   view: false
   concretizer:
     unify: false
