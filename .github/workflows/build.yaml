@@ -76,7 +76,7 @@ jobs:
             spack -e . concretize --fresh
 
             # "Boostrap" Mold
-            spack -e . install mold --no-check-signature
+            spack -e . install --no-check-signature mold
             rm /usr/bin/ld && ln -s $(spack location -i mold)/bin/ld.mold /usr/bin/ld
 
             # Spack Install 
