@@ -5,6 +5,7 @@ on:
 
 env:
   REGISTRY_IMAGE: user/app
+  DOCKER_BUILDKIT: 0
 
 jobs:
   build:
@@ -47,7 +48,7 @@ jobs:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ env.REGISTRY_IMAGE }}
-          outputs: type=docker
+          outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
       - name: Export digest
         run: |
